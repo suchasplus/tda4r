@@ -1,7 +1,7 @@
 package com.suchasplus;
 
-import com.suchasplus.agen.ArrayInitBaseListener;
-import com.suchasplus.agen.ArrayInitParser;
+import com.suchasplus.gen.arrayinit.ArrayInitBaseListener;
+import com.suchasplus.gen.arrayinit.ArrayInitParser;
 
 /**
  * Copyright 2009-2017 Weibo, Inc.

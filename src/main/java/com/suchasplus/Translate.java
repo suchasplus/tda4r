@@ -1,7 +1,7 @@
 package com.suchasplus;
 
-import com.suchasplus.agen.ArrayInitLexer;
-import com.suchasplus.agen.ArrayInitParser;
+import com.suchasplus.gen.arrayinit.ArrayInitLexer;
+import com.suchasplus.gen.arrayinit.ArrayInitParser;
 import java.io.IOException;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;

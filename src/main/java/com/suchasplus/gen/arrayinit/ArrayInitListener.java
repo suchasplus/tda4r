@@ -1,5 +1,5 @@
 // Generated from C:/dev/IdeaProjects/parser/src/main/resources\ArrayInit.g4 by ANTLR 4.7
-package com.suchasplus.agen;
+package com.suchasplus.gen.arrayinit;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
