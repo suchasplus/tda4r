@@ -1,7 +1,7 @@
 package com.suchasplus;
 
-import com.suchasplus.gen.labeledexpr.LabeledExprLexer;
-import com.suchasplus.gen.labeledexpr.LabeledExprParser;
+import com.suchasplus.gen.java1dot7.JavaLexer;
+import com.suchasplus.gen.java1dot7.JavaParser;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,25 +9,27 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 /**
  * Copyright 2009-2017 Weibo, Inc.
- * suchasplus@2017-08-21 20:36
+ * suchasplus@2017-08-21 21:41
  */
-public class Calc {
+public class ExtractInterfaceTool {
 	
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		String inputFile = null;
 		if (args.length > 0) {inputFile = args[0];}
 		InputStream is = System.in;
 		if(inputFile != null) {is = new FileInputStream(inputFile);}
 		CharStream input = CharStreams.fromStream(is);
-		LabeledExprLexer lexer = new LabeledExprLexer(input);
+		JavaLexer lexer = new JavaLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		LabeledExprParser parser = new LabeledExprParser(tokens);
-		ParseTree tree = parser.prog();
+		JavaParser parser = new JavaParser(tokens);
+		ParseTree tree = parser.compilationUnit();
 		
-		EvalVisitor eval = new EvalVisitor();
-		eval.visit(tree);
+		ParseTreeWalker walker = new ParseTreeWalker();
+		ExtractInterfaceListener extractor = new ExtractInterfaceListener(parser);
+		walker.walk(extractor, tree);
 	}
 }
