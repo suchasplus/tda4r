@@ -38,6 +38,14 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -54,18 +62,18 @@
     </build>
 
     <!-- WeiboAd MvN Profiles -->
-    <profiles>
-        <profile>
-            <id>weiboad</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>weiboad</id>
-                    <url>http://mvn.weiboad.org/content/groups/public/</url>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
+    <!--<profiles>-->
+        <!--<profile>-->
+            <!--<id>weiboad</id>-->
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>-->
+            <!--</activation>-->
+            <!--<repositories>-->
+                <!--<repository>-->
+                    <!--<id>weiboad</id>-->
+                    <!--<url>http://mvn.weiboad.org/content/groups/public/</url>-->
+                <!--</repository>-->
+            <!--</repositories>-->
+        <!--</profile>-->
+    <!--</profiles>-->
 </project>

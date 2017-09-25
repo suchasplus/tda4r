@@ -1,0 +1,26 @@
+intersect {
+    exclude {
+        item(7),
+        item(8)
+    },
+    item(1),
+    junction {
+        exclude {
+            intersect {
+                item(4),
+                exclude {
+                    item(5),
+                    item(6)
+                }
+            },
+            intersect {
+                item(2),
+                item(3)
+            }
+        },
+        junction {
+            item(10),
+            item(11)
+        }
+    }
+}
